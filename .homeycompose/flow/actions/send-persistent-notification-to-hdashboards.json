@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Send persistent notification to HDashboards"
+  },
+  "titleFormatted": {
+    "en": "Send persistent notification [[message]] to HDashboards"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "message",
+      "placeholder": {
+        "en": "Enter a message"
+      }
+    }
+  ]
+}

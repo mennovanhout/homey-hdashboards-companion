@@ -1,0 +1,27 @@
+{
+  "title": {
+    "en": "Send notification to HDashboards"
+  },
+  "titleFormatted": {
+    "en": "Send notification [[message]] to HDashboards for [[duration]] seconds"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "message",
+      "placeholder": {
+        "en": "Enter a message"
+      }
+    },
+    {
+      "type": "number",
+      "name": "duration",
+      "placeholder": {
+        "en": "Choose duration"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ]
+}

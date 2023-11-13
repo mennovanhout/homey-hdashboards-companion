@@ -1,0 +1,39 @@
+{
+  "id": "nl.mennovanhout.hdashboards-companion",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "HDashboards companion"
+  },
+  "description": {
+    "en": "Companion app for HDashboards"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "HDashboards",
+    "email": "info@hdashboards.app"
+  },
+  "brandColor": "#12bf7c",
+  "homepage": "https://hdashboards.app",
+  "contributing": {
+    "donate": {
+      "bunq": {
+        "username": "mennovanhout"
+      }
+    }
+  }
+}
