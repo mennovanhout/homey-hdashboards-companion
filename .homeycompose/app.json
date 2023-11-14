@@ -10,7 +10,7 @@
     "en": "HDashboards companion"
   },
   "description": {
-    "en": "Companion app for HDashboards"
+    "en": "Your companion app for your personal Homey dashboards."
   },
   "category": [
     "tools"
@@ -30,6 +30,7 @@
   },
   "brandColor": "#12bf7c",
   "homepage": "https://hdashboards.app",
+  "support": "https://hdashboards.app",
   "contributing": {
     "donate": {
       "bunq": {
