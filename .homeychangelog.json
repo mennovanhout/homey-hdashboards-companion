@@ -4,5 +4,8 @@
   },
   "1.1.1": {
     "en": "Feedback from Homey"
+  },
+  "1.1.2": {
+    "en": "Fix typo in readme"
   }
 }
