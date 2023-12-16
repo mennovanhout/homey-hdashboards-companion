@@ -43,6 +43,27 @@
     "actions": [
       {
         "title": {
+          "en": "Reset card background color"
+        },
+        "titleFormatted": {
+          "en": "Reset card background color of [[identifier]]"
+        },
+        "hint": {
+          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "identifier",
+            "placeholder": {
+              "en": "Enter identifier"
+            }
+          }
+        ],
+        "id": "reset-card-background-color"
+      },
+      {
+        "title": {
           "en": "Send notification to HDashboards"
         },
         "titleFormatted": {
@@ -71,6 +92,40 @@
       },
       {
         "title": {
+          "en": "Send notification to hdashboards with image"
+        },
+        "titleFormatted": {
+          "en": "Send notification [[message]] with image [[droptoken]] to HDashboards for [[duration]] seconds"
+        },
+        "hint": {
+          "en": "(HDashboards v0.4.6 and up)"
+        },
+        "droptoken": [
+          "image"
+        ],
+        "args": [
+          {
+            "type": "text",
+            "name": "message",
+            "placeholder": {
+              "en": "Enter a message"
+            }
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "placeholder": {
+              "en": "Choose duration"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ],
+        "id": "send-notification-to-hdashboards-with-image"
+      },
+      {
+        "title": {
           "en": "Send persistent notification to HDashboards"
         },
         "titleFormatted": {
@@ -86,6 +141,55 @@
           }
         ],
         "id": "send-persistent-notification-to-hdashboards"
+      },
+      {
+        "title": {
+          "en": "Send persistent notification to HDashboards with image"
+        },
+        "titleFormatted": {
+          "en": "Send persistent notification [[message]] with image [[droptoken]] to HDashboards"
+        },
+        "hint": {
+          "en": "(HDashboards v0.4.6 and up)"
+        },
+        "droptoken": [
+          "image"
+        ],
+        "args": [
+          {
+            "type": "text",
+            "name": "message",
+            "placeholder": {
+              "en": "Enter a message"
+            }
+          }
+        ],
+        "id": "send-persistent-notification-to-hdashboards-with-image"
+      },
+      {
+        "title": {
+          "en": "Set card background color"
+        },
+        "titleFormatted": {
+          "en": "Set background color of [[identifier]] to [[backgroundColor]]"
+        },
+        "hint": {
+          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "identifier",
+            "placeholder": {
+              "en": "Enter identifier"
+            }
+          },
+          {
+            "type": "color",
+            "name": "backgroundColor"
+          }
+        ],
+        "id": "set-card-background-color"
       }
     ]
   }

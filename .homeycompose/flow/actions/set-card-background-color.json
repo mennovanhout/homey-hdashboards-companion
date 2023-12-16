@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Set card background color"
+  },
+  "titleFormatted": {
+    "en": "Set background color of [[identifier]] to [[backgroundColor]]"
+  },
+  "hint": {
+    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "identifier",
+      "placeholder": {
+        "en": "Enter identifier"
+      }
+    },
+    {
+      "type": "color",
+      "name": "backgroundColor"
+    }
+  ]
+}

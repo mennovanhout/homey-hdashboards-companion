@@ -1,0 +1,20 @@
+{
+  "title": {
+    "en": "Reset card background color"
+  },
+  "titleFormatted": {
+    "en": "Reset card background color of [[identifier]]"
+  },
+  "hint": {
+    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "identifier",
+      "placeholder": {
+        "en": "Enter identifier"
+      }
+    }
+  ]
+}
