@@ -13,5 +13,8 @@
   },
   "2.0.1": {
     "en": "Add support for coloring cards and image notifications"
+  },
+  "2.1.0": {
+    "en": "Add support for new key and add support for dutch"
   }
 }

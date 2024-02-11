@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -43,13 +43,16 @@
     "actions": [
       {
         "title": {
-          "en": "Reset card background color"
+          "en": "Reset card background color",
+          "nl": "Kaart achtergrondkleur resetten"
         },
         "titleFormatted": {
-          "en": "Reset card background color of [[identifier]]"
+          "en": "Reset card background color of [[identifier]]",
+          "nl": "Kaart achtergrondkleur resetten van [[identifier]]"
         },
         "hint": {
-          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)",
+          "nl": "Je kunt de identifier vinden op het kaart bewerken scherm (HDashboards app v0.4.6 en hoger)"
         },
         "highlight": true,
         "args": [
@@ -57,7 +60,8 @@
             "type": "text",
             "name": "identifier",
             "placeholder": {
-              "en": "Enter identifier"
+              "en": "Enter identifier",
+              "nl": "Voer identifier in"
             }
           }
         ],
@@ -65,24 +69,28 @@
       },
       {
         "title": {
-          "en": "Send notification to HDashboards"
+          "en": "Send notification to HDashboards",
+          "nl": "Stuur notificatie naar HDashboards"
         },
         "titleFormatted": {
-          "en": "Send notification [[message]] to HDashboards for [[duration]] seconds"
+          "en": "Send notification [[message]] to HDashboards for [[duration]] seconds",
+          "nl": "Stuur notificatie [[message]] naar HDashboards voor [[duration]] seconden"
         },
         "args": [
           {
             "type": "text",
             "name": "message",
             "placeholder": {
-              "en": "Enter a message"
+              "en": "Enter a message",
+              "nl": "Voer een bericht in"
             }
           },
           {
             "type": "number",
             "name": "duration",
             "placeholder": {
-              "en": "Choose duration"
+              "en": "Choose duration",
+              "nl": "Kies duur"
             },
             "min": 0,
             "max": 100,
@@ -93,13 +101,16 @@
       },
       {
         "title": {
-          "en": "Send notification to hdashboards with image"
+          "en": "Send notification to hdashboards with image",
+          "nl": "Stuur notificatie naar hdashboards met afbeelding"
         },
         "titleFormatted": {
-          "en": "Send notification [[message]] with image [[droptoken]] to HDashboards for [[duration]] seconds"
+          "en": "Send notification [[message]] with image [[droptoken]] to HDashboards for [[duration]] seconds",
+          "nl": "Stuur notificatie [[message]] met afbeelding [[droptoken]] naar HDashboards voor [[duration]] seconden"
         },
         "hint": {
-          "en": "(HDashboards v0.4.6 and up)"
+          "en": "(HDashboards v0.4.6 and up)",
+          "nl": "(HDashboards v0.4.6 en hoger)"
         },
         "droptoken": [
           "image"
@@ -109,14 +120,16 @@
             "type": "text",
             "name": "message",
             "placeholder": {
-              "en": "Enter a message"
+              "en": "Enter a message",
+              "nl": "Voer een bericht in"
             }
           },
           {
             "type": "number",
             "name": "duration",
             "placeholder": {
-              "en": "Choose duration"
+              "en": "Choose duration",
+              "nl": "Kies duur"
             },
             "min": 0,
             "max": 100,
@@ -127,17 +140,20 @@
       },
       {
         "title": {
-          "en": "Send persistent notification to HDashboards"
+          "en": "Send persistent notification to HDashboards",
+          "nl": "Stuur een persistente notificatie naar HDashboards"
         },
         "titleFormatted": {
-          "en": "Send persistent notification [[message]] to HDashboards"
+          "en": "Send persistent notification [[message]] to HDashboards",
+          "nl": "Stuur een persistente notificatie [[message]] naar HDashboards"
         },
         "args": [
           {
             "type": "text",
             "name": "message",
             "placeholder": {
-              "en": "Enter a message"
+              "en": "Enter a message",
+              "nl": "Voer een bericht in"
             }
           }
         ],
@@ -145,13 +161,16 @@
       },
       {
         "title": {
-          "en": "Send persistent notification to HDashboards with image"
+          "en": "Send persistent notification to HDashboards with image",
+          "nl": "Stuur een persistente notificatie naar HDashboards met afbeelding"
         },
         "titleFormatted": {
-          "en": "Send persistent notification [[message]] with image [[droptoken]] to HDashboards"
+          "en": "Send persistent notification [[message]] with image [[droptoken]] to HDashboards",
+          "nl": "Stuur een persistente notificatie [[message]] met afbeelding [[droptoken]] naar HDashboards"
         },
         "hint": {
-          "en": "(HDashboards v0.4.6 and up)"
+          "en": "(HDashboards v0.4.6 and up)",
+          "nl": "(HDashboards v0.4.6 en hoger)"
         },
         "droptoken": [
           "image"
@@ -161,7 +180,8 @@
             "type": "text",
             "name": "message",
             "placeholder": {
-              "en": "Enter a message"
+              "en": "Enter a message",
+              "nl": "Voer een bericht in"
             }
           }
         ],
@@ -169,13 +189,16 @@
       },
       {
         "title": {
-          "en": "Set card background color"
+          "en": "Set card background color",
+          "nl": "Stel kaart achtergrondkleur in"
         },
         "titleFormatted": {
-          "en": "Set background color of [[identifier]] to [[backgroundColor]]"
+          "en": "Set background color of [[identifier]] to [[backgroundColor]]",
+          "nl": "Stel achtergrondkleur van [[identifier]] in op [[backgroundColor]]"
         },
         "hint": {
-          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+          "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)",
+          "nl": "Je kunt de identificatie vinden op het bewerk kaart scherm (HDashboards app v0.4.6 en hoger)"
         },
         "highlight": true,
         "args": [
@@ -183,7 +206,8 @@
             "type": "text",
             "name": "identifier",
             "placeholder": {
-              "en": "Enter identifier"
+              "en": "Enter identifier",
+              "nl": "Voer identificatie in"
             }
           },
           {
