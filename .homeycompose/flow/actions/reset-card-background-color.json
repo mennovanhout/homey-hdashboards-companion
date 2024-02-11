@@ -1,19 +1,24 @@
 {
   "title": {
-    "en": "Reset card background color"
+    "en": "Reset card background color",
+    "nl": "Kaart achtergrondkleur resetten"
   },
   "titleFormatted": {
-    "en": "Reset card background color of [[identifier]]"
+    "en": "Reset card background color of [[identifier]]",
+    "nl": "Kaart achtergrondkleur resetten van [[identifier]]"
   },
   "hint": {
-    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)",
+    "nl": "Je kunt de identifier vinden op het kaart bewerken scherm (HDashboards app v0.4.6 en hoger)"
   },
+  "highlight": true,
   "args": [
     {
       "type": "text",
       "name": "identifier",
       "placeholder": {
-        "en": "Enter identifier"
+        "en": "Enter identifier",
+        "nl": "Voer identifier in"
       }
     }
   ]

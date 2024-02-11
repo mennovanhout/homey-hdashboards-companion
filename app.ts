@@ -60,19 +60,23 @@ class HDashboardsCompanionApp extends Homey.App {
     // Send over socket
     this.homey.api.realtime('hdashboards:card-color', args);
 
-    const homeyProId = await this.homey.cloud.getHomeyId();
+    // get key
+    const key = this.homey.settings.get('key');
+
+    if (key === undefined || key === null || key === '') {
+      throw new Error('Please enter a key in app settings');
+    }
 
     // Send to cloud
     try {
       await axios.post('https://hdashboards.app/companion-api/card/background-color', {
-        homey_pro_id: homeyProId,
+        key,
         identifier: args.identifier,
         backgroundColor: args.backgroundColor,
       });
     } catch (error) {
       // @ts-ignore
       throw new Error(error.message);
-      return false;
     }
     return true;
   }

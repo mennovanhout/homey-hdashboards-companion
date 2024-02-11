@@ -1,19 +1,24 @@
 {
   "title": {
-    "en": "Set card background color"
+    "en": "Set card background color",
+    "nl": "Stel kaart achtergrondkleur in"
   },
   "titleFormatted": {
-    "en": "Set background color of [[identifier]] to [[backgroundColor]]"
+    "en": "Set background color of [[identifier]] to [[backgroundColor]]",
+    "nl": "Stel achtergrondkleur van [[identifier]] in op [[backgroundColor]]"
   },
   "hint": {
-    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)"
+    "en": "You can find the identifier on the edit card screen (HDashboards app v0.4.6 and up)",
+    "nl": "Je kunt de identificatie vinden op het bewerk kaart scherm (HDashboards app v0.4.6 en hoger)"
   },
+  "highlight": true,
   "args": [
     {
       "type": "text",
       "name": "identifier",
       "placeholder": {
-        "en": "Enter identifier"
+        "en": "Enter identifier",
+        "nl": "Voer identificatie in"
       }
     },
     {

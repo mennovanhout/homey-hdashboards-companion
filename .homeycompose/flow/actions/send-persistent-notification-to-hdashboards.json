@@ -1,16 +1,19 @@
 {
   "title": {
-    "en": "Send persistent notification to HDashboards"
+    "en": "Send persistent notification to HDashboards",
+    "nl": "Stuur een persistente notificatie naar HDashboards"
   },
   "titleFormatted": {
-    "en": "Send persistent notification [[message]] to HDashboards"
+    "en": "Send persistent notification [[message]] to HDashboards",
+    "nl": "Stuur een persistente notificatie [[message]] naar HDashboards"
   },
   "args": [
     {
       "type": "text",
       "name": "message",
       "placeholder": {
-        "en": "Enter a message"
+        "en": "Enter a message",
+        "nl": "Voer een bericht in"
       }
     }
   ]

@@ -1,1 +1,8 @@
-{}
+{
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Companion app settings",
+    "authentication": "Authentication",
+    "save": "Save"
+  }
+}

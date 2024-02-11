@@ -1,12 +1,15 @@
 {
   "title": {
-    "en": "Send notification to hdashboards with image"
+    "en": "Send notification to hdashboards with image",
+    "nl": "Stuur notificatie naar hdashboards met afbeelding"
   },
   "titleFormatted": {
-    "en": "Send notification [[message]] with image [[droptoken]] to HDashboards for [[duration]] seconds"
+    "en": "Send notification [[message]] with image [[droptoken]] to HDashboards for [[duration]] seconds",
+    "nl": "Stuur notificatie [[message]] met afbeelding [[droptoken]] naar HDashboards voor [[duration]] seconden"
   },
   "hint": {
-    "en": "(HDashboards v0.4.6 and up)"
+    "en": "(HDashboards v0.4.6 and up)",
+    "nl": "(HDashboards v0.4.6 en hoger)"
   },
   "droptoken": ["image"],
   "args": [
@@ -14,14 +17,16 @@
       "type": "text",
       "name": "message",
       "placeholder": {
-        "en": "Enter a message"
+        "en": "Enter a message",
+        "nl": "Voer een bericht in"
       }
     },
     {
       "type": "number",
       "name": "duration",
       "placeholder": {
-        "en": "Choose duration"
+        "en": "Choose duration",
+        "nl": "Kies duur"
       },
       "min": 0,
       "max": 100,

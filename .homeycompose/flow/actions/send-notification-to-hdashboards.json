@@ -1,23 +1,27 @@
 {
   "title": {
-    "en": "Send notification to HDashboards"
+    "en": "Send notification to HDashboards",
+    "nl": "Stuur notificatie naar HDashboards"
   },
   "titleFormatted": {
-    "en": "Send notification [[message]] to HDashboards for [[duration]] seconds"
+    "en": "Send notification [[message]] to HDashboards for [[duration]] seconds",
+    "nl": "Stuur notificatie [[message]] naar HDashboards voor [[duration]] seconden"
   },
   "args": [
     {
       "type": "text",
       "name": "message",
       "placeholder": {
-        "en": "Enter a message"
+        "en": "Enter a message",
+        "nl": "Voer een bericht in"
       }
     },
     {
       "type": "number",
       "name": "duration",
       "placeholder": {
-        "en": "Choose duration"
+        "en": "Choose duration",
+        "nl": "Kies duur"
       },
       "min": 0,
       "max": 100,

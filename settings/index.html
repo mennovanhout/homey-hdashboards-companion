@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script
+                type="text/javascript"
+                src="/homey.js"
+                data-origin="settings"
+        ></script>
+    </head>
+    <body>
+        <header class="homey-header">
+            <h1 class="homey-title" data-i18n="settings.title">
+                <!-- This will be filled with the translated string with key 'settings.title'. -->
+            </h1>
+            <p class="homey-subtitle" data-i18n="settings.subtitle">
+                <!-- This field will also be translated -->
+            </p>
+        </header>
+
+        <fieldset class="homey-form-fieldset">
+            <legend class="homey-form-legend" data-i18n="settings.authentication"></legend>
+
+            <div class="homey-form-group">
+                <label class="homey-form-label" for="key">Key</label>
+                <input class="homey-form-input" id="key" type="text" value="" />
+            </div>
+        </fieldset>
+
+        <button id="save" class="homey-button-primary-full" data-i18n="settings.save">Save changes</button>
+
+        <script type="text/javascript">
+          function onHomeyReady(Homey) {
+            Homey.ready();
+
+            const keyElement = document.getElementById("key");
+            const saveElement = document.getElementById("save");
+
+            Homey.get("key", function (err, key) {
+              if (err) return Homey.alert(err);
+              keyElement.value = key;
+            });
+
+            saveElement.addEventListener("click", function (e) {
+              Homey.set("key", keyElement.value, function (err) {
+                if (err) return Homey.alert(err);
+                Homey.alert("Settings saved");
+              });
+            });
+          }
+        </script>
+    </body>
+</html>
