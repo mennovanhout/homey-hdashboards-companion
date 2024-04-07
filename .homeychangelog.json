@@ -19,5 +19,8 @@
   },
   "2.1.1": {
     "en": "Fixed texts"
+  },
+  "2.1.2": {
+    "en": "Added color history to prevent server spam"
   }
 }
