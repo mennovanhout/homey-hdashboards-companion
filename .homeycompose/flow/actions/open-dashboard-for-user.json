@@ -1,0 +1,32 @@
+{
+  "title": {
+    "en": "Open dashboard for user",
+    "nl": "Open dashboard voor gebruiker"
+  },
+  "titleFormatted": {
+    "en": "Open dashboard [[dashboard]] for [[user]]",
+    "nl": "Open dashboard [[dashboard]] voor [[user]]"
+  },
+  "hint": {
+    "en": "HDashboards app v0.7.0 and up",
+    "nl": "HDashboards app v0.7.0 en hoger"
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "dashboard",
+      "placeholder": {
+        "en": "Choose",
+        "nl": "Kies"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "user",
+      "placeholder": {
+        "en": "User",
+        "nl": "Gebruiker"
+      }
+    }
+  ]
+}

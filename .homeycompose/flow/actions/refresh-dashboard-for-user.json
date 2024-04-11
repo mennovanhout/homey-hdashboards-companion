@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Refresh dashboard for user",
+    "nl": "Vernieuw dashboard voor gebruiker"
+  },
+  "titleFormatted": {
+    "en": "Refresh dashboard for [[user]]",
+    "nl": "Vernieuw dashboard voor [[user]]"
+  },
+  "hint": {
+    "en": "HDashboards app v0.7.0 and up",
+    "nl": "HDashboards app v0.7.0 en hoger"
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "user",
+      "placeholder": {
+        "en": "User",
+        "nl": "Gebruiker"
+      }
+    }
+  ]
+}
