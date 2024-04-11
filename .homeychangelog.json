@@ -22,5 +22,11 @@
   },
   "2.1.2": {
     "en": "Added color history to prevent server spam"
+  },
+  "2.2.0": {
+    "en": "Added cards to switch dashboards or reload them"
+  },
+  "2.2.1": {
+    "en": "Fix typo"
   }
 }

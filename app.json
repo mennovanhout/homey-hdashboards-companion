@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.1.2",
+  "version": "2.2.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -41,6 +41,64 @@
   },
   "flow": {
     "actions": [
+      {
+        "title": {
+          "en": "Open dashboard for user",
+          "nl": "Open dashboard voor gebruiker"
+        },
+        "titleFormatted": {
+          "en": "Open dashboard [[dashboard]] for [[user]]",
+          "nl": "Open dashboard [[dashboard]] voor [[user]]"
+        },
+        "hint": {
+          "en": "HDashboards app v0.7.0 and up",
+          "nl": "HDashboards app v0.7.0 en hoger"
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "dashboard",
+            "placeholder": {
+              "en": "Choose",
+              "nl": "Kies"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "user",
+            "placeholder": {
+              "en": "User",
+              "nl": "Gebruiker"
+            }
+          }
+        ],
+        "id": "open-dashboard-for-user"
+      },
+      {
+        "title": {
+          "en": "Refresh dashboard for user",
+          "nl": "Vernieuw dashboard voor gebruiker"
+        },
+        "titleFormatted": {
+          "en": "Refresh dashboard for [[user]]",
+          "nl": "Vernieuw dashboard voor [[user]]"
+        },
+        "hint": {
+          "en": "HDashboards app v0.7.0 and up",
+          "nl": "HDashboards app v0.7.0 en hoger"
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "user",
+            "placeholder": {
+              "en": "User",
+              "nl": "Gebruiker"
+            }
+          }
+        ],
+        "id": "refresh-dashboard-for-user"
+      },
       {
         "title": {
           "en": "Reset card background color",
