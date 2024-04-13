@@ -1,6 +1,6 @@
 {
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -16,7 +16,8 @@
     "tools"
   ],
   "permissions": [
-    "homey:manager:api"
+    "homey:manager:api",
+    "homey:app:nl.mennovanhout.hdashboards-companion"
   ],
   "source": "https://github.com/mennovanhout/homey-hdashboards-companion",
   "images": {

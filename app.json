@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -17,7 +17,8 @@
     "tools"
   ],
   "permissions": [
-    "homey:manager:api"
+    "homey:manager:api",
+    "homey:app:nl.mennovanhout.hdashboards-companion"
   ],
   "source": "https://github.com/mennovanhout/homey-hdashboards-companion",
   "images": {
@@ -40,6 +41,131 @@
     }
   },
   "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "A dashboard opened",
+          "nl": "Een dashboard is geopend"
+        },
+        "titleFormatted": {
+          "en": "A dashboard opened",
+          "nl": "Een dashboard is geopend"
+        },
+        "hint": {
+          "en": "HDashboards v0.7.1 and up",
+          "nl": "HDashboards v0.7.1 en hoger"
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "opened-by-user",
+            "title": {
+              "en": "Opened by user",
+              "nl": "Geopend door gebruiker"
+            },
+            "example": {
+              "en": "info@hdashboards.app",
+              "nl": "info@hdashboards.app"
+            }
+          },
+          {
+            "type": "string",
+            "name": "dashboard-name",
+            "title": {
+              "en": "Dashboard name",
+              "nl": "Dashboard naam"
+            },
+            "example": {
+              "en": "Home",
+              "nl": "Thuis"
+            }
+          }
+        ],
+        "id": "any-dashboard-is-opened"
+      },
+      {
+        "title": {
+          "en": "Dashboard opened by user",
+          "nl": "Dashboard geopend door gebruiker"
+        },
+        "titleFormatted": {
+          "en": "[[dashboard]] opened by [[user]]",
+          "nl": "[[dashboard]] geopend door [[user]]"
+        },
+        "hint": {
+          "en": "HDashboards v0.7.0 and up",
+          "nl": "HDashboards v0.7.0 en hoger"
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "dashboard",
+            "placeholder": {
+              "en": "Dashboard",
+              "nl": "Dashboard"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "user",
+            "placeholder": {
+              "en": "User",
+              "nl": "Gebruiker"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "opened-by-user",
+            "title": {
+              "en": "Opened by user",
+              "nl": "Geopend door gebruiker"
+            },
+            "example": {
+              "en": "Gives back who opened the dashboard (email)",
+              "nl": "Geeft terug wie het dashboard geopend heeft (email)"
+            }
+          }
+        ],
+        "id": "hdashboards-opened"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Dashboard !{{is|isn't}} active for user",
+          "nl": "Dashboard !{{is|is niet}} actief voor gebruiker"
+        },
+        "titleFormatted": {
+          "en": "[[dashboard]] !{{is|isn't}} active for [[user]]",
+          "nl": "[[dashboard]] !{{is|is niet}} actief voor [[user]]"
+        },
+        "hint": {
+          "en": "HDashboards v0.7.0 and up",
+          "nl": "HDashboards v0.7.0 en hoger"
+        },
+        "args": [
+          {
+            "type": "autocomplete",
+            "name": "dashboard",
+            "placeholder": {
+              "en": "Dashboard",
+              "nl": "Dashboard"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "user",
+            "placeholder": {
+              "en": "User",
+              "nl": "Gebruiker"
+            }
+          }
+        ],
+        "id": "dashboard-is-open-for-user"
+      }
+    ],
     "actions": [
       {
         "title": {
@@ -47,8 +173,8 @@
           "nl": "Open dashboard voor gebruiker"
         },
         "titleFormatted": {
-          "en": "Open dashboard [[dashboard]] for [[user]]",
-          "nl": "Open dashboard [[dashboard]] voor [[user]]"
+          "en": "Open [[dashboard]] for [[user]]",
+          "nl": "Open [[dashboard]] voor [[user]]"
         },
         "hint": {
           "en": "HDashboards app v0.7.0 and up",
