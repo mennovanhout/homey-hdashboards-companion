@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.2.3",
+  "version": "2.3.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -42,6 +42,44 @@
   },
   "flow": {
     "triggers": [
+      {
+        "title": {
+          "en": "A dashboard card with identifier is pressed",
+          "nl": "Een dashboardkaart met identificatie is ingedrukt"
+        },
+        "titleFormatted": {
+          "en": "A dashboard card with identifier [[identifier]] is pressed",
+          "nl": "Een dashboardkaart met identificatie [[identifier]] is ingedrukt"
+        },
+        "hint": {
+          "en": "Only works when tile is configured to companion under advanced",
+          "nl": "Werkt alleen als de tegel is geconfigureerd als companion onder geavanceerd"
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "identifier",
+            "placeholder": {
+              "en": "identifier",
+              "nl": "identificatie"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "type": "string",
+            "name": "user",
+            "title": {
+              "en": "User",
+              "nl": "Gebruiker"
+            },
+            "example": {
+              "en": "info@hdashboards.app"
+            }
+          }
+        ],
+        "id": "a-dashboard-card-with-identifier-is-pressed"
+      },
       {
         "title": {
           "en": "A dashboard opened",

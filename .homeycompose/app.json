@@ -1,6 +1,6 @@
 {
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.2.3",
+  "version": "2.3.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
