@@ -1,0 +1,32 @@
+{
+  "title": {
+    "en": "Dashboard !{{is|isn't}} active for user",
+    "nl": "Dashboard !{{is|is niet}} actief voor gebruiker"
+  },
+  "titleFormatted": {
+    "en": "[[dashboard]] !{{is|isn't}} active for [[user]]",
+    "nl": "[[dashboard]] !{{is|is niet}} actief voor [[user]]"
+  },
+  "hint": {
+    "en": "HDashboards v0.7.0 and up",
+    "nl": "HDashboards v0.7.0 en hoger"
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "dashboard",
+      "placeholder": {
+        "en": "Dashboard",
+        "nl": "Dashboard"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "user",
+      "placeholder": {
+        "en": "User",
+        "nl": "Gebruiker"
+      }
+    }
+  ]
+}

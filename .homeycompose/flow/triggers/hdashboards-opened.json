@@ -1,0 +1,46 @@
+{
+  "title": {
+    "en": "Dashboard opened by user",
+    "nl": "Dashboard geopend door gebruiker"
+  },
+  "titleFormatted": {
+    "en": "[[dashboard]] opened by [[user]]",
+    "nl": "[[dashboard]] geopend door [[user]]"
+  },
+  "hint": {
+    "en": "HDashboards v0.7.0 and up",
+    "nl": "HDashboards v0.7.0 en hoger"
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "dashboard",
+      "placeholder": {
+        "en": "Dashboard",
+        "nl": "Dashboard"
+      }
+    },
+    {
+      "type": "autocomplete",
+      "name": "user",
+      "placeholder": {
+        "en": "User",
+        "nl": "Gebruiker"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "string",
+      "name": "opened-by-user",
+      "title": {
+        "en": "Opened by user",
+        "nl": "Geopend door gebruiker"
+      },
+      "example": {
+        "en": "Gives back who opened the dashboard (email)",
+        "nl": "Geeft terug wie het dashboard geopend heeft (email)"
+      }
+    }
+  ]
+}

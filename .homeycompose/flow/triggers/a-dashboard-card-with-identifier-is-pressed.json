@@ -1,0 +1,37 @@
+{
+  "title": {
+    "en": "A dashboard card with identifier is pressed",
+    "nl": "Een dashboardkaart met identificatie is ingedrukt"
+  },
+  "titleFormatted": {
+    "en": "A dashboard card with identifier [[identifier]] is pressed",
+    "nl": "Een dashboardkaart met identificatie [[identifier]] is ingedrukt"
+  },
+  "hint": {
+    "en": "Only works when tile is configured to companion under advanced",
+    "nl": "Werkt alleen als de tegel is geconfigureerd als companion onder geavanceerd"
+  },
+  "args": [
+    {
+      "type": "text",
+      "name": "identifier",
+      "placeholder": {
+        "en": "identifier",
+        "nl": "identificatie"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "string",
+      "name": "user",
+      "title": {
+        "en": "User",
+        "nl": "Gebruiker"
+      },
+      "example": {
+        "en": "info@hdashboards.app"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": {
+    "en": "A dashboard opened",
+    "nl": "Een dashboard is geopend"
+  },
+  "titleFormatted": {
+    "en": "A dashboard opened",
+    "nl": "Een dashboard is geopend"
+  },
+  "hint": {
+    "en": "HDashboards v0.7.1 and up",
+    "nl": "HDashboards v0.7.1 en hoger"
+  },
+  "tokens": [
+    {
+      "type": "string",
+      "name": "opened-by-user",
+      "title": {
+        "en": "Opened by user",
+        "nl": "Geopend door gebruiker"
+      },
+      "example": {
+        "en": "info@hdashboards.app",
+        "nl": "info@hdashboards.app"
+      }
+    },
+    {
+      "type": "string",
+      "name": "dashboard-name",
+      "title": {
+        "en": "Dashboard name",
+        "nl": "Dashboard naam"
+      },
+      "example": {
+        "en": "Home",
+        "nl": "Thuis"
+      }
+    }
+  ]
+}

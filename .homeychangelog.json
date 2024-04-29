@@ -40,5 +40,8 @@
   },
   "2.3.1": {
     "en": "Fix color memory on issue with cloud"
+  },
+  "2.3.2": {
+    "en": "Bug fixes"
   }
 }

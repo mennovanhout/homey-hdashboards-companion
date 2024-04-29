@@ -4,8 +4,8 @@
     "nl": "Open dashboard voor gebruiker"
   },
   "titleFormatted": {
-    "en": "Open dashboard [[dashboard]] for [[user]]",
-    "nl": "Open dashboard [[dashboard]] voor [[user]]"
+    "en": "Open [[dashboard]] for [[user]]",
+    "nl": "Open [[dashboard]] voor [[user]]"
   },
   "hint": {
     "en": "HDashboards app v0.7.0 and up",
