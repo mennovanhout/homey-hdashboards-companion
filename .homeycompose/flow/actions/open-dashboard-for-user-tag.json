@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Open dashboard for user (variable)",
+    "nl": "Open dashboard voor gebruiker (variable)"
+  },
+  "titleFormatted": {
+    "en": "Open [[dashboard]] for [[droptoken]] (variable)",
+    "nl": "Open [[dashboard]] voor [[droptoken]] (variable)"
+  },
+  "hint": {
+    "en": "HDashboards app v0.7.0 and up",
+    "nl": "HDashboards app v0.7.0 en hoger"
+  },
+  "droptoken": ["string"],
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "dashboard",
+      "placeholder": {
+        "en": "Choose",
+        "nl": "Kies"
+      }
+    }
+  ]
+}

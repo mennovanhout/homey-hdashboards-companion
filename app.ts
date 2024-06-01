@@ -16,6 +16,7 @@ class HDashboardsCompanionApp extends Homey.App {
   setCardBackgroundColor: Homey.FlowCardAction|undefined;
   resetCardBackgroundColor: Homey.FlowCardAction|undefined;
   openDashboardForUser: Homey.FlowCardAction|undefined;
+  openDashboardForUserTag: Homey.FlowCardAction|undefined;
   refreshDashboardForUser: Homey.FlowCardAction|undefined;
   dashboardIsOpenForUser: Homey.FlowCardCondition|undefined;
   dashboardHasOpened: Homey.FlowCardTrigger|undefined;
@@ -46,6 +47,18 @@ class HDashboardsCompanionApp extends Homey.App {
     this.openDashboardForUser.registerArgumentAutocompleteListener('user', this.userAutocompleteListener.bind(this));
     this.openDashboardForUser.registerArgumentAutocompleteListener('dashboard', this.dashboardAutocompleteListener.bind(this));
     this.openDashboardForUser.registerRunListener(this.sendOpenDashboardCommand.bind(this));
+
+    this.openDashboardForUserTag = this.homey.flow.getActionCard('open-dashboard-for-user-tag');
+    this.openDashboardForUserTag.registerArgumentAutocompleteListener('dashboard', this.dashboardAutocompleteListener.bind(this));
+    this.openDashboardForUserTag.registerRunListener(async (args, state) => {
+      args.user = {
+        id: args.droptoken,
+        description: args.droptoken,
+        name: 'Unknown',
+      };
+
+      this.sendOpenDashboardCommand(args, state);
+    });
 
     this.refreshDashboardForUser = this.homey.flow.getActionCard('refresh-dashboard-for-user');
     this.refreshDashboardForUser.registerArgumentAutocompleteListener('user', this.userAutocompleteListener.bind(this));
@@ -99,6 +112,10 @@ class HDashboardsCompanionApp extends Homey.App {
 
     const myWebhook = await this.homey.cloud.createWebhook(id, secret, {});
     myWebhook.on('message', async (message: any) => {
+      if (message.body.event === 'hdashboards:clear-cache') {
+        this.colorMemory = {};
+      }
+
       if (message.body.event === 'hdashboards:opened-dashboard') {
         await this.anyDashboardHasOpened!.trigger({
           'opened-by-user': message.body.data.user,
