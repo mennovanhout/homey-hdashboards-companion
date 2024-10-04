@@ -49,5 +49,8 @@
   },
   "2.4.0": {
     "en": "Add new open dashboard for variable card"
+  },
+  "2.5.0": {
+    "en": "Add pincode"
   }
 }
