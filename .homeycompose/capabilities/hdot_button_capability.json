@@ -1,0 +1,11 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Button pressed",
+    "nl": "Knop ingedrukt"
+  },
+  "uiComponent": "sensor",
+  "icon": "/assets/button.svg",
+  "getable": true,
+  "setable": false
+}

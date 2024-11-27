@@ -4,6 +4,7 @@ import { Connection } from '@2colors/esphome-native-api';
 module.exports = class MyDevice extends Homey.Device {
 
   nameToKey: { [key: string]: number } = {};
+  keyToName: { [key: number]: string } = {};
 
   /**
    * onInit is called when the device is initialized.
@@ -46,6 +47,7 @@ module.exports = class MyDevice extends Homey.Device {
         }
 
         this.nameToKey[entity.entity.name] = entity.entity.key;
+        this.keyToName[entity.entity.key] = entity.entity.name;
       });
 
       // Subscribe to states
@@ -56,8 +58,6 @@ module.exports = class MyDevice extends Homey.Device {
     client.on('error', (error) => this.log(error));
 
     client.on('message.LightStateResponse', (state) => {
-      this.log(state);
-
       if (state.effect != this.getCapabilityValue('hdot_effects_capability')) {
         this.homey.flow.getDeviceTriggerCard('hdot-the-effect-changed').trigger(this, {
           effect: state.effect
@@ -69,6 +69,34 @@ module.exports = class MyDevice extends Homey.Device {
       this.setCapabilityValue('light_hue', this.rgbToHue(state));
       this.setCapabilityValue('light_saturation', this.calculateSaturation(state.red, state.green, state.blue));
       this.setCapabilityValue('hdot_effects_capability', state.effect);
+    });
+
+    client.on('message.BinarySensorStateResponse', (state) => {
+      const name = this.keyToName[state.key];
+
+      if (name === 'Button') {
+        this.setCapabilityValue('hdot_button_capability', state.state);
+
+        if (state.state) {
+          this.homey.flow.getDeviceTriggerCard('hdot-button-pressed').trigger(this);
+        }
+      }
+
+      if (name === 'Clockwise') {
+        this.setCapabilityValue('hdot_clockwise_capability', state.state);
+
+        if (state.state) {
+          this.homey.flow.getDeviceTriggerCard('hdot-rotate-clockwise').trigger(this);
+        }
+      }
+
+      if (name === 'Anti Clockwise') {
+        this.setCapabilityValue('hdot_anti_clockwise_capability', state.state);
+
+        if (state.state) {
+          this.homey.flow.getDeviceTriggerCard('hdot-rotate-anti-clockwise').trigger(this);
+        }
+      }
     });
 
     // Homey listeners

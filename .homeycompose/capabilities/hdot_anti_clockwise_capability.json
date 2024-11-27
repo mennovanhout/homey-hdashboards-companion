@@ -1,0 +1,11 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Rotated Anti Clockwise",
+    "nl": "Tegen de klok in gedraaid"
+  },
+  "uiComponent": "sensor",
+  "icon": "/assets/anticlockwise.svg",
+  "getable": true,
+  "setable": false
+}

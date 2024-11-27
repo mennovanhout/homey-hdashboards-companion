@@ -8,7 +8,10 @@
     "light_hue",
     "light_saturation",
     "onoff",
-    "hdot_effects_capability"
+    "hdot_effects_capability",
+    "hdot_button_capability",
+    "hdot_clockwise_capability",
+    "hdot_anti_clockwise_capability"
   ],
   "platforms": [
     "local"

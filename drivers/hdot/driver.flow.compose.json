@@ -66,6 +66,27 @@
           }
         }
       ]
+    },
+    {
+      "id": "hdot-button-pressed",
+      "title": {
+        "en": "The button is pressed",
+        "nl": "De knop is ingedrukt"
+      }
+    },
+    {
+      "id": "hdot-rotate-clockwise",
+      "title": {
+        "en": "Rotated clockwise",
+        "nl": "Met de klok mee gedraaid"
+      }
+    },
+    {
+      "id": "hdot-rotate-anti-clockwise",
+      "title": {
+        "en": "Rotated anti clockwise",
+        "nl": "Tegen de klok in gedraaid"
+      }
     }
   ]
 }
