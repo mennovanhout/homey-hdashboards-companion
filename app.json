@@ -178,6 +178,34 @@
           }
         ],
         "id": "hdashboards-opened"
+      },
+      {
+        "id": "hdot-the-effect-changed",
+        "title": {
+          "en": "The effect changed",
+          "nl": "Het effect is veranderd"
+        },
+        "tokens": [
+          {
+            "type": "string",
+            "name": "effect",
+            "title": {
+              "en": "Effect",
+              "nl": "Effect"
+            },
+            "example": {
+              "en": "Rainbow",
+              "nl": "Rainbow"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -213,6 +241,32 @@
           }
         ],
         "id": "dashboard-is-open-for-user"
+      },
+      {
+        "id": "hdot-effect-is-set-to",
+        "title": {
+          "en": "Effect is set to",
+          "nl": "Effect is ingesteld op"
+        },
+        "titleFormatted": {
+          "en": "Effect is set to [[effect]]",
+          "nl": "Effect is ingesteld op [[effect]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          },
+          {
+            "type": "autocomplete",
+            "name": "effect",
+            "placeholder": {
+              "en": "Choose",
+              "nl": "Kies"
+            }
+          }
+        ]
       }
     ],
     "actions": [
@@ -477,7 +531,95 @@
           }
         ],
         "id": "set-card-background-color"
+      },
+      {
+        "id": "hdot-set-effect-to",
+        "title": {
+          "en": "Set effect to",
+          "nl": "Stel effect in op"
+        },
+        "titleFormatted": {
+          "en": "Set effect to [[effect]]",
+          "nl": "Stel effect in op [[effect]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          },
+          {
+            "type": "autocomplete",
+            "name": "effect",
+            "placeholder": {
+              "en": "Choose",
+              "nl": "Kies"
+            }
+          }
+        ]
       }
     ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "HDot"
+      },
+      "class": "light",
+      "capabilities": [
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "onoff",
+        "hdot_effects_capability"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "small": "/drivers/hdot/assets/images/small.png",
+        "large": "/drivers/hdot/assets/images/large.png",
+        "xlarge": "/drivers/hdot/assets/images/xlarge.png"
+      },
+      "id": "hdot"
+    }
+  ],
+  "capabilities": {
+    "hdot_effects_capability": {
+      "type": "enum",
+      "title": {
+        "en": "Effects",
+        "nl": "Effecten"
+      },
+      "uiComponent": "picker",
+      "icon": "/assets/firework.svg",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "loading",
+          "title": {
+            "en": "Loading",
+            "nl": "Laden"
+          }
+        }
+      ]
+    }
   }
 }

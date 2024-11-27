@@ -1,0 +1,71 @@
+{
+  "actions": [
+    {
+      "id": "hdot-set-effect-to",
+      "title": {
+        "en": "Set effect to",
+        "nl": "Stel effect in op"
+      },
+      "titleFormatted": {
+        "en": "Set effect to [[effect]]",
+        "nl": "Stel effect in op [[effect]]"
+      },
+      "args": [
+        {
+          "type": "autocomplete",
+          "name": "effect",
+          "placeholder": {
+            "en": "Choose",
+            "nl": "Kies"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hdot-effect-is-set-to",
+      "title": {
+        "en": "Effect is set to",
+        "nl": "Effect is ingesteld op"
+      },
+      "titleFormatted": {
+        "en": "Effect is set to [[effect]]",
+        "nl": "Effect is ingesteld op [[effect]]"
+      },
+      "args": [
+        {
+          "type": "autocomplete",
+          "name": "effect",
+          "placeholder": {
+            "en": "Choose",
+            "nl": "Kies"
+          }
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "hdot-the-effect-changed",
+      "title": {
+        "en": "The effect changed",
+        "nl": "Het effect is veranderd"
+      },
+      "tokens": [
+        {
+          "type": "string",
+          "name": "effect",
+          "title": {
+            "en": "Effect",
+            "nl": "Effect"
+          },
+          "example": {
+            "en": "Rainbow",
+            "nl": "Rainbow"
+          }
+        }
+      ]
+    }
+  ]
+}

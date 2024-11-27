@@ -1,0 +1,20 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Effects",
+    "nl": "Effecten"
+  },
+  "uiComponent": "picker",
+  "icon": "/assets/firework.svg",
+  "getable": true,
+  "setable": true,
+  "values": [
+    {
+      "id": "loading",
+      "title": {
+        "en": "Loading",
+        "nl": "Laden"
+      }
+    }
+  ]
+}

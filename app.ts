@@ -134,6 +134,7 @@ class HDashboardsCompanionApp extends Homey.App {
       if (message.body.event === 'hdashboards:on-tap') {
         await this.aDashboardCardIsPressed!.trigger({
           user: message.body.data.user,
+          pincode: message.body.data.pincode ?? 'false',
         }, message.body.data);
       }
     });
@@ -277,6 +278,7 @@ class HDashboardsCompanionApp extends Homey.App {
     // Send to cloud
     try {
       await axios.post('https://hdashboards.app/companion-api/card/background-color', {
+      // await axios.post('http://192.168.68.114/companion-api/card/background-color', {
         key,
         identifier: args.identifier,
         backgroundColor: args.backgroundColor,

@@ -32,6 +32,17 @@
       "example": {
         "en": "info@hdashboards.app"
       }
+    },
+    {
+      "type": "string",
+      "name": "pincode",
+      "title": {
+        "en": "Used pincode",
+        "nl": "Gebruikte pincode"
+      },
+      "example": {
+        "en": "info@hdashboards.app"
+      }
     }
   ]
 }
