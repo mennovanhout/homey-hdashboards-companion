@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -199,6 +199,48 @@
             }
           }
         ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          }
+        ]
+      },
+      {
+        "id": "hdot-button-pressed",
+        "title": {
+          "en": "The button is pressed",
+          "nl": "De knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          }
+        ]
+      },
+      {
+        "id": "hdot-rotate-clockwise",
+        "title": {
+          "en": "Rotated clockwise",
+          "nl": "Met de klok mee gedraaid"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hdot"
+          }
+        ]
+      },
+      {
+        "id": "hdot-rotate-anti-clockwise",
+        "title": {
+          "en": "Rotated anti clockwise",
+          "nl": "Tegen de klok in gedraaid"
+        },
         "args": [
           {
             "type": "device",
@@ -571,7 +613,10 @@
         "light_hue",
         "light_saturation",
         "onoff",
-        "hdot_effects_capability"
+        "hdot_effects_capability",
+        "hdot_button_capability",
+        "hdot_clockwise_capability",
+        "hdot_anti_clockwise_capability"
       ],
       "platforms": [
         "local"
@@ -601,6 +646,39 @@
     }
   ],
   "capabilities": {
+    "hdot_anti_clockwise_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Rotated Anti Clockwise",
+        "nl": "Tegen de klok in gedraaid"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/anticlockwise.svg",
+      "getable": true,
+      "setable": false
+    },
+    "hdot_button_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Button pressed",
+        "nl": "Knop ingedrukt"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/button.svg",
+      "getable": true,
+      "setable": false
+    },
+    "hdot_clockwise_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Rotated clockwise",
+        "nl": "Met de klok mee gedraaid"
+      },
+      "uiComponent": "sensor",
+      "icon": "/assets/clockwise.svg",
+      "getable": true,
+      "setable": false
+    },
     "hdot_effects_capability": {
       "type": "enum",
       "title": {

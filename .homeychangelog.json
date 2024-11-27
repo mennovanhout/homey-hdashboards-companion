@@ -55,5 +55,8 @@
   },
   "2.6.0": {
     "en": "Add support for HDot"
+  },
+  "2.6.1": {
+    "en": "Added button support for HDot"
   }
 }
