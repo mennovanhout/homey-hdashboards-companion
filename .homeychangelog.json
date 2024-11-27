@@ -52,5 +52,8 @@
   },
   "2.5.0": {
     "en": "Add pincode"
+  },
+  "2.6.0": {
+    "en": "Add support for HDot"
   }
 }
