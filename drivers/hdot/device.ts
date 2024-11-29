@@ -19,11 +19,17 @@ module.exports = class MyDevice extends Homey.Device {
     });
 
     // Connect
-    await client.connect();
+    try {
+      await client.connect();
+    } catch (error) {
+      this.log(error);
+      await this.setUnavailable('Could not connect to device');
+    }
 
     // On authorized
     client.on('authorized', async () => {
       this.log('authorized');
+      await this.setAvailable();
 
       const entities = await client.listEntitiesService();
 
@@ -55,7 +61,14 @@ module.exports = class MyDevice extends Homey.Device {
       client.subscribeStatesService();
     });
 
-    client.on('error', (error) => this.log(error));
+    client.on('error', (error) => {
+      this.log('ERROR');
+      this.log(error)
+
+      if (error.toString().includes('getaddrinfo')) {
+        this.setUnavailable('Could not connect to device');
+      }
+    });
 
     client.on('message.LightStateResponse', (state) => {
       if (state.effect != this.getCapabilityValue('hdot_effects_capability')) {

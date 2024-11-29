@@ -1,0 +1,48 @@
+{
+  "title": {
+    "en": "Set option to value for identifier",
+    "nl": "Stel optie in op waarde voor identificatie"
+  },
+  "titleFormatted": {
+    "en": "Set [[option]] to [[value]] for [[identifier]]",
+    "nl": "Stel [[option]] in op [[value]] voor [[identifier]]"
+  },
+  "args": [
+    {
+      "type": "dropdown",
+      "name": "option",
+      "values": [
+        {
+          "id": "title",
+          "label": {
+            "en": "Title",
+            "nl": "Titel"
+          }
+        },
+        {
+          "id": "subtitle",
+          "label": {
+            "en": "Subtitle",
+            "nl": "Subtitel"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "value",
+      "placeholder": {
+        "en": "Value",
+        "nl": "Waarde"
+      }
+    },
+    {
+      "type": "text",
+      "name": "identifier",
+      "placeholder": {
+        "en": "identifier",
+        "nl": "identifier"
+      }
+    }
+  ]
+}

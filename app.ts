@@ -9,6 +9,7 @@ class HDashboardsCompanionApp extends Homey.App {
 
   openDashboards: string[] = [];
 
+  setOptionCard: Homey.FlowCardAction|undefined;
   sendNotificationCard: Homey.FlowCardAction|undefined;
   sendImageNotificationCard: Homey.FlowCardAction|undefined;
   sendPersistentNotificationCard: Homey.FlowCardAction|undefined;
@@ -25,6 +26,9 @@ class HDashboardsCompanionApp extends Homey.App {
   colorMemory: ColorMemory = {};
 
   async onInit() {
+    this.setOptionCard = this.homey.flow.getActionCard('hd-set-option-to');
+    this.setOptionCard.registerRunListener(this.sendOptionUpdateToHDashboards.bind(this));
+
     this.sendNotificationCard = this.homey.flow.getActionCard('send-notification-to-hdashboards');
     this.sendNotificationCard.registerRunListener(this.sendNotificationToHDashboards.bind(this));
 
@@ -290,6 +294,33 @@ class HDashboardsCompanionApp extends Homey.App {
       // @ts-ignore
       throw new Error(error.message);
     }
+    return true;
+  }
+
+  private async sendOptionUpdateToHDashboards(args: any, stats: any) {
+    // Send over socket
+    this.homey.api.realtime('hdashboards:card-settings', args);
+
+    // get key
+    const key = this.homey.settings.get('key');
+
+    if (key === undefined || key === null || key === '') {
+      throw new Error('Please enter a key in app settings');
+    }
+
+    // Send to cloud
+    try {
+      await axios.post('https://hdashboards.app/companion-api/card/settings', {
+        key,
+        identifier: args.identifier,
+        option: args.option,
+        value: args.value,
+      });
+    } catch (error) {
+      // @ts-ignore
+      throw new Error(error.message);
+    }
+
     return true;
   }
 
