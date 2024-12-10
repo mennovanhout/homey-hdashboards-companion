@@ -61,5 +61,11 @@
   },
   "2.7.0": {
     "en": "Add new flow cards for card options"
+  },
+  "2.7.1": {
+    "en": "Restructure flow card title"
+  },
+  "2.8.0": {
+    "en": "Updating for color and car settings to be fully local"
   }
 }

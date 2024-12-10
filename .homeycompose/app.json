@@ -1,6 +1,6 @@
 {
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -37,6 +37,18 @@
       "bunq": {
         "username": "mennovanhout"
       }
+    }
+  },
+  "api": {
+    "getColors": {
+      "method": "GET",
+      "path": "/colors",
+      "public": true
+    },
+    "getOptions": {
+      "method": "GET",
+      "path": "/options",
+      "public": true
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -38,6 +38,18 @@
       "bunq": {
         "username": "mennovanhout"
       }
+    }
+  },
+  "api": {
+    "getColors": {
+      "method": "GET",
+      "path": "/colors",
+      "public": true
+    },
+    "getOptions": {
+      "method": "GET",
+      "path": "/options",
+      "public": true
     }
   },
   "flow": {
@@ -314,12 +326,12 @@
     "actions": [
       {
         "title": {
-          "en": "Set option to value for identifier",
-          "nl": "Stel optie in op waarde voor identificatie"
+          "en": "Set option for identifier to value",
+          "nl": "Stel optie voor identificatie in op waarde"
         },
         "titleFormatted": {
-          "en": "Set [[option]] to [[value]] for [[identifier]]",
-          "nl": "Stel [[option]] in op [[value]] voor [[identifier]]"
+          "en": "Set [[option]] for [[identifier]] to [[value]]",
+          "nl": "Stel [[option]] voor [[identifier]] in op [[value]]"
         },
         "args": [
           {
