@@ -1,11 +1,11 @@
 {
   "title": {
-    "en": "Set option to value for identifier",
-    "nl": "Stel optie in op waarde voor identificatie"
+    "en": "Set option for identifier to value",
+    "nl": "Stel optie voor identificatie in op waarde"
   },
   "titleFormatted": {
-    "en": "Set [[option]] to [[value]] for [[identifier]]",
-    "nl": "Stel [[option]] in op [[value]] voor [[identifier]]"
+    "en": "Set [[option]] for [[identifier]] to [[value]]",
+    "nl": "Stel [[option]] voor [[identifier]] in op [[value]]"
   },
   "args": [
     {

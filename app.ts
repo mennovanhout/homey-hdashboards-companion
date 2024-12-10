@@ -261,65 +261,36 @@ class HDashboardsCompanionApp extends Homey.App {
     // trim
     args.identifier = args.identifier.trim();
 
-    // Check if the color is the same as the previous one
-    if (this.colorMemory[args.identifier] === args.backgroundColor) {
-      return true;
-    }
+    // Get colors
+    const colors = this.homey.settings.get('colors') ?? {};
 
-    // Save color
-    this.colorMemory[args.identifier] = args.backgroundColor;
+    // Update
+    colors[args.identifier] = args.backgroundColor;
+
+    // Save
+    this.homey.settings.set('colors', colors);
 
     // Send over socket
     this.homey.api.realtime('hdashboards:card-color', args);
 
-    // get key
-    const key = this.homey.settings.get('key');
-
-    if (key === undefined || key === null || key === '') {
-      throw new Error('Please enter a key in app settings');
-    }
-
-    // Send to cloud
-    try {
-      await axios.post('https://hdashboards.app/companion-api/card/background-color', {
-      // await axios.post('http://192.168.68.114/companion-api/card/background-color', {
-        key,
-        identifier: args.identifier,
-        backgroundColor: args.backgroundColor,
-      });
-    } catch (error) {
-      // Remove color from memory
-      delete this.colorMemory[args.identifier];
-
-      // @ts-ignore
-      throw new Error(error.message);
-    }
     return true;
   }
 
   private async sendOptionUpdateToHDashboards(args: any, stats: any) {
+    // Get options
+    const options = this.homey.settings.get('options') ?? {};
+
+    // Update
+    if (!options[args.identifier]) {
+      options[args.identifier] = {};
+    }
+    options[args.identifier][args.option] = args.value;
+
+    // Save
+    this.homey.settings.set('options', options);
+
     // Send over socket
     this.homey.api.realtime('hdashboards:card-settings', args);
-
-    // get key
-    const key = this.homey.settings.get('key');
-
-    if (key === undefined || key === null || key === '') {
-      throw new Error('Please enter a key in app settings');
-    }
-
-    // Send to cloud
-    try {
-      await axios.post('https://hdashboards.app/companion-api/card/settings', {
-        key,
-        identifier: args.identifier,
-        option: args.option,
-        value: args.value,
-      });
-    } catch (error) {
-      // @ts-ignore
-      throw new Error(error.message);
-    }
 
     return true;
   }
