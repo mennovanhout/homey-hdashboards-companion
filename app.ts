@@ -259,7 +259,7 @@ class HDashboardsCompanionApp extends Homey.App {
     }
 
     // trim
-    args.identifier = args.identifier.trim();
+    args.identifier = args.identifier.trim().toLowerCase();
 
     // Get colors
     const colors = this.homey.settings.get('colors') ?? {};
@@ -279,6 +279,8 @@ class HDashboardsCompanionApp extends Homey.App {
   private async sendOptionUpdateToHDashboards(args: any, stats: any) {
     // Get options
     const options = this.homey.settings.get('options') ?? {};
+
+    args.identifier = args.identifier.trim().toLowerCase();
 
     // Update
     if (!options[args.identifier]) {
