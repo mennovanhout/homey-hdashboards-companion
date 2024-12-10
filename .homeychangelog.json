@@ -67,5 +67,8 @@
   },
   "2.8.0": {
     "en": "Updating for color and car settings to be fully local"
+  },
+  "2.8.1": {
+    "en": "Small bug fix"
   }
 }
