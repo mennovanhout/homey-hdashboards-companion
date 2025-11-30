@@ -76,5 +76,8 @@
   },
   "2.8.3": {
     "en": "Add clear data button in app settings and change url support dor dashboard cards"
+  },
+  "3.0.0": {
+    "en": "Add support for comma seperated multi values"
   }
 }
