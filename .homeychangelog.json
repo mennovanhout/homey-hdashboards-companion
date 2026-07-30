@@ -79,5 +79,8 @@
   },
   "3.0.0": {
     "en": "Add support for comma seperated multi values"
+  },
+  "3.1.0": {
+    "en": "Add new option to set value of cards"
   }
 }
