@@ -25,6 +25,8 @@
             </div>
         </fieldset>
 
+        <button id="clear" style="margin-bottom:20px;" class="homey-button-danger-shadow-full" data-i18n="settings.clear">Clear Data</button>
+
         <button id="save" class="homey-button-primary-full" data-i18n="settings.save">Save changes</button>
 
         <script type="text/javascript">
@@ -33,6 +35,7 @@
 
             const keyElement = document.getElementById("key");
             const saveElement = document.getElementById("save");
+            const clearElement = document.getElementById("clear");
 
             Homey.get("key", function (err, key) {
               if (err) return Homey.alert(err);
@@ -44,6 +47,12 @@
                 if (err) return Homey.alert(err);
                 Homey.alert("Settings saved");
               });
+            });
+
+            clearElement.addEventListener("click", function (e) {
+              Homey.set('options', {});
+
+              Homey.alert("Data cleared");
             });
           }
         </script>

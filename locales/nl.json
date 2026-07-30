@@ -3,6 +3,7 @@
     "title": "Instellingen",
     "subtitle": "Companion app instellingen",
     "authentication": "Authenticatie",
-    "save": "Opslaan"
+    "save": "Opslaan",
+    "clear": "Data wissen"
   }
 }

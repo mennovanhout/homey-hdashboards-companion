@@ -25,6 +25,20 @@
             "en": "Subtitle",
             "nl": "Subtitel"
           }
+        },
+        {
+          "id": "url",
+          "label": {
+            "en": "URL",
+            "nl": "URL"
+          }
+        },
+        {
+          "id": "value",
+          "label": {
+            "en": "Value",
+            "nl": "Waarde"
+          }
         }
       ]
     },

@@ -107,7 +107,9 @@ class HDashboardsCompanionApp extends Homey.App {
 
     this.aDashboardCardIsPressed = this.homey.flow.getTriggerCard('a-dashboard-card-with-identifier-is-pressed');
     this.aDashboardCardIsPressed.registerRunListener(async (args, state) => {
-      return args.identifier === state.identifier;
+      const argsIdentifier = args.identifier.split(',').map((id: string) => id.trim().toLowerCase());
+
+      return argsIdentifier.includes(state.identifier.trim().toLowerCase());
     });
 
     // Start listening for webhook
@@ -258,20 +260,24 @@ class HDashboardsCompanionApp extends Homey.App {
       args.backgroundColor = null;
     }
 
-    // trim
-    args.identifier = args.identifier.trim().toLowerCase();
+    const identifiers = args.identifier.split(',');
 
-    // Get colors
-    const colors = this.homey.settings.get('colors') ?? {};
+    for (let identifier of identifiers) {
+      const trimmedIdentifier = identifier.trim().toLowerCase();
+      const clonedArgs = { ...args, identifier: trimmedIdentifier };
 
-    // Update
-    colors[args.identifier] = args.backgroundColor;
+      // Get colors
+      const colors = this.homey.settings.get('colors') ?? {};
 
-    // Save
-    this.homey.settings.set('colors', colors);
+      // Update
+      colors[clonedArgs.identifier] = clonedArgs.backgroundColor;
 
-    // Send over socket
-    this.homey.api.realtime('hdashboards:card-color', args);
+      // Save
+      this.homey.settings.set('colors', colors);
+
+      // Send over socket
+      this.homey.api.realtime('hdashboards:card-color', clonedArgs);
+    }
 
     return true;
   }
@@ -280,19 +286,20 @@ class HDashboardsCompanionApp extends Homey.App {
     // Get options
     const options = this.homey.settings.get('options') ?? {};
 
-    args.identifier = args.identifier.trim().toLowerCase();
+    const identifiers = args.identifier.split(',');
 
-    // Update
-    if (!options[args.identifier]) {
-      options[args.identifier] = {};
+    for (let identifier of identifiers) {
+      const trimmedIdentifier = identifier.trim().toLowerCase();
+      const clonedArgs = { ...args, identifier: trimmedIdentifier };
+
+      if (!options[clonedArgs.identifier]) {
+        options[clonedArgs.identifier] = {};
+      }
+      options[clonedArgs.identifier][clonedArgs.option] = clonedArgs.value;
+
+      this.homey.settings.set('options', options);
+      this.homey.api.realtime('hdashboards:card-settings', clonedArgs);
     }
-    options[args.identifier][args.option] = args.value;
-
-    // Save
-    this.homey.settings.set('options', options);
-
-    // Send over socket
-    this.homey.api.realtime('hdashboards:card-settings', args);
 
     return true;
   }
