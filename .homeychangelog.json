@@ -82,5 +82,8 @@
   },
   "3.1.0": {
     "en": "Add new option to set value of cards"
+  },
+  "3.2.0": {
+    "en": "Dashboards changed on hdashboards.app, for example by an AI assistant, now reload right away on your screens."
   }
 }
