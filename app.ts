@@ -137,6 +137,15 @@ class HDashboardsCompanionApp extends Homey.App {
         this.openDashboards.push(message.body.data.dashboard);
       }
 
+      // Sent by hdashboards.app when a dashboard was changed there, for example by an AI
+      // assistant: running screens reload it right away
+      if (message.body.event === 'hdashboards:refresh-dashboard') {
+        this.homey.api.realtime('hdashboards:refresh-dashboard', {
+          user: { id: 'everyone', name: 'Everyone' },
+          dashboard: message.body.data?.dashboard,
+        });
+      }
+
       if (message.body.event === 'hdashboards:on-tap') {
         await this.aDashboardCardIsPressed!.trigger({
           user: message.body.data.user,
