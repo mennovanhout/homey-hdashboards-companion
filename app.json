@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.mennovanhout.hdashboards-companion",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -648,6 +648,46 @@
           }
         ],
         "id": "set-card-background-color"
+      },
+      {
+        "title": {
+          "en": "Set card background color with transparency",
+          "nl": "Stel kaart achtergrondkleur in met transparantie"
+        },
+        "titleFormatted": {
+          "en": "Set background color of [[identifier]] to [[backgroundColor]] with [[transparency]]% transparency",
+          "nl": "Stel achtergrondkleur van [[identifier]] in op [[backgroundColor]] met [[transparency]]% transparantie"
+        },
+        "hint": {
+          "en": "Transparency runs from 0 (solid) to 100 (invisible). You can find the identifier on the edit card screen.",
+          "nl": "Transparantie loopt van 0 (dekkend) tot 100 (onzichtbaar). Je kunt de identificatie vinden op het bewerk kaart scherm."
+        },
+        "args": [
+          {
+            "type": "text",
+            "name": "identifier",
+            "placeholder": {
+              "en": "Enter identifier",
+              "nl": "Voer identificatie in"
+            }
+          },
+          {
+            "type": "color",
+            "name": "backgroundColor"
+          },
+          {
+            "type": "number",
+            "name": "transparency",
+            "placeholder": {
+              "en": "0 is solid, 100 is invisible",
+              "nl": "0 is dekkend, 100 is onzichtbaar"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ],
+        "id": "set-card-background-color-with-transparency"
       },
       {
         "id": "hdot-set-effect-to",

@@ -85,5 +85,8 @@
   },
   "3.2.0": {
     "en": "Dashboards changed on hdashboards.app, for example by an AI assistant, now reload right away on your screens."
+  },
+  "3.3.0": {
+    "en": "New flow card: set a card's background color with a transparency percentage."
   }
 }

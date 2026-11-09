@@ -1,6 +1,20 @@
 import Homey from 'homey';
 import axios from 'axios';
 
+// Turns #rrggbb and a transparency of 0 to 100 into #aarrggbb, which the
+// HDashboards app reads as is. Without transparency the color stays #rrggbb.
+function colorWithTransparency(color: string, transparency: unknown): string {
+  const percentage = Math.min(100, Math.max(0, Number(transparency) || 0));
+
+  if (percentage === 0) {
+    return color;
+  }
+
+  const alpha = Math.round(((100 - percentage) / 100) * 255).toString(16).padStart(2, '0');
+
+  return `#${alpha}${color.replace('#', '')}`;
+}
+
 interface ColorMemory {
   [key: string]: string | null;
 }
@@ -15,6 +29,7 @@ class HDashboardsCompanionApp extends Homey.App {
   sendPersistentNotificationCard: Homey.FlowCardAction|undefined;
   sendImagePersistentNotificationCard: Homey.FlowCardAction|undefined;
   setCardBackgroundColor: Homey.FlowCardAction|undefined;
+  setCardBackgroundColorWithTransparency: Homey.FlowCardAction|undefined;
   resetCardBackgroundColor: Homey.FlowCardAction|undefined;
   openDashboardForUser: Homey.FlowCardAction|undefined;
   openDashboardForUserTag: Homey.FlowCardAction|undefined;
@@ -43,6 +58,9 @@ class HDashboardsCompanionApp extends Homey.App {
 
     this.setCardBackgroundColor = this.homey.flow.getActionCard('set-card-background-color');
     this.setCardBackgroundColor.registerRunListener(this.sendSetCardBackgroundColorToHDashboards.bind(this));
+
+    this.setCardBackgroundColorWithTransparency = this.homey.flow.getActionCard('set-card-background-color-with-transparency');
+    this.setCardBackgroundColorWithTransparency.registerRunListener(this.sendSetCardBackgroundColorWithTransparencyToHDashboards.bind(this));
 
     this.resetCardBackgroundColor = this.homey.flow.getActionCard('reset-card-background-color');
     this.resetCardBackgroundColor.registerRunListener(this.sendSetCardBackgroundColorToHDashboards.bind(this));
@@ -262,6 +280,13 @@ class HDashboardsCompanionApp extends Homey.App {
     delete args.droptoken;
 
     this.homey.api.realtime('hdashboards:persistent-notification', args);
+  }
+
+  private async sendSetCardBackgroundColorWithTransparencyToHDashboards(args: any, stats: any) {
+    return this.sendSetCardBackgroundColorToHDashboards({
+      identifier: args.identifier,
+      backgroundColor: colorWithTransparency(args.backgroundColor, args.transparency),
+    }, stats);
   }
 
   private async sendSetCardBackgroundColorToHDashboards(args: any, stats: any) {
